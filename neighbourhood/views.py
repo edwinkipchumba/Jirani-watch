@@ -183,3 +183,45 @@ def notification(request):
 
     return render(request,'notifications/notifications.html',{"notifications":all_notifications})
 
+@login_required(login_url='/accounts/login/')
+def new_notification(request):
+    current_user=request.user
+    profile =Profile.objects.get(username=current_user)
+
+    if request.method=="POST":
+        form =notificationsForm(request.POST,request.FILES)
+        if form.is_valid():
+            notification = form.save(commit = False)
+            notification.author = current_user
+            notification.neighbourhood = profile.neighbourhood
+            notification.save()
+
+            if notification.priority == 'High Priority':
+                send_email(profile.name,profile.email,notification.title,notification.notification,notification.author,notification.neighbourhood)
+
+        return HttpResponseRedirect('/notifications')
+
+
+    else:
+        form = notificationsForm()
+
+    return render(request,'notifications/notifications_form.html',{"form":form})
+
+# search 
+@login_required(login_url='/accounts/login/')
+def search_results(request):
+    current_user = request.user
+    profile =Profile.objects.get(username=current_user)
+    if 'business' in request.GET and request.GET["business"]:
+        search_term = request.GET.get("business")
+        searched_businesses = Business.search_business(search_term)
+        message=f"{search_term}"
+
+        print(searched_businesses)
+
+        return render(request,'business/search.html',{"message":message,"businesses":searched_businesses,"profile":profile})
+
+    else:
+        message="You haven't searched for any term"
+        return render(request,'business/search.html',{"message":message})
+
