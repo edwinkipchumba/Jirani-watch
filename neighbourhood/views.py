@@ -153,3 +153,13 @@ def new_business(request):
 
     return render(request,'business/business_form.html',{"form":form})
 
+
+# jirani health information
+@login_required(login_url='/accounts/login/')
+def health(request):
+    current_user=request.user
+    profile=Profile.objects.get(username=current_user)
+    healthservices = Health.objects.filter(neighbourhood=profile.neighbourhood)
+
+    return render(request,'health/health.html',{"healthservices":healthservices})
+
