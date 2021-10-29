@@ -163,3 +163,23 @@ def health(request):
 
     return render(request,'health/health.html',{"healthservices":healthservices})
 
+
+# information about police authorities
+@login_required(login_url='/accounts/login/')
+def authorities(request):
+    current_user=request.user
+    profile=Profile.objects.get(username=current_user)
+    authorities = Authorities.objects.filter(neighbourhood=profile.neighbourhood)
+
+    return render(request,'authorities/authorities.html',{"authorities":authorities})
+
+
+# jirani notifications
+@login_required(login_url='/accounts/login/')
+def notification(request):
+    current_user=request.user
+    profile=Profile.objects.get(username=current_user)
+    all_notifications = notifications.objects.filter(neighbourhood=profile.neighbourhood)
+
+    return render(request,'notifications/notifications.html',{"notifications":all_notifications})
+
