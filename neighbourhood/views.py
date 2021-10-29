@@ -101,3 +101,55 @@ def view_blog(request,id):
 
     return render(request,'blog/view_blog.html',{"blog":blog,"form":form,"comments":comments})
 
+# post new post
+@login_required(login_url='/accounts/login/')
+def new_blogpost(request):
+    current_user=request.user
+    profile =Profile.objects.get(username=current_user)
+
+    if request.method=="POST":
+        form =BlogPostForm(request.POST,request.FILES)
+        if form.is_valid():
+            blogpost = form.save(commit = False)
+            blogpost.username = current_user
+            blogpost.neighbourhood = profile.neighbourhood
+            blogpost.profpic = profile.profpic
+            blogpost.save()
+
+        return HttpResponseRedirect('/blog')
+
+    else:
+        form = BlogPostForm()
+
+    return render(request,'blog/blogpost_form.html',{"form":form})
+
+
+@login_required(login_url='/accounts/login/')
+def businesses(request):
+    current_user=request.user
+    profile=Profile.objects.get(username=current_user)
+    businesses = Business.objects.filter(neighbourhood=profile.neighbourhood)
+
+    return render(request,'business/businesses.html',{"businesses":businesses})
+
+# post new b/s
+@login_required(login_url='/accounts/login/')
+def new_business(request):
+    current_user=request.user
+    profile =Profile.objects.get(username=current_user)
+
+    if request.method=="POST":
+        form =BusinessForm(request.POST,request.FILES)
+        if form.is_valid():
+            business = form.save(commit = False)
+            business.owner = current_user
+            business.neighbourhood = profile.neighbourhood
+            business.save()
+
+        return HttpResponseRedirect('/businesses')
+
+    else:
+        form = BusinessForm()
+
+    return render(request,'business/business_form.html',{"form":form})
+
