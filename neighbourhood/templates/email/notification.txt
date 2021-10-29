@@ -1,0 +1,9 @@
+{{title}}
+
+Hello {{name}},
+
+{{message | safe }}
+
+Yours Fauthfully,
+{{author}}
+Enjoy your Stay In Our Neighbourhood- {{neighbourhood}}
