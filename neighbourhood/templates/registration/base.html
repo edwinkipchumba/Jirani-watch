@@ -9,20 +9,22 @@
     {% if title %}
     <title>{{title}}</title>
     {% else %}
-    <title>Neighbourhood - All the Neighbours</title>
+    <title>Neighbourhood - All Areas</title>
     {% endif %}
 
     {% block styles %}
     {% bootstrap_css %}
+    <link rel="stylesheet" href="{% static 'css/base2.css' %}">
     {% endblock %}
 
-    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.ico' %}">
+    <link rel="shortcut icon" type="image/png" href="{% static 'img/favicon.png' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
         integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
 </head>
 
 <body>
-    {% include 'navbar.html' %}
+
     {% block content %}
 
     {% endblock %}
@@ -30,8 +32,12 @@
     {% block scripts %}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     {% bootstrap_javascript %}
     {% endblock %}
+
+
+
 </body>
 
 </html>
