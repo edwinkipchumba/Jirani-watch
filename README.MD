@@ -4,7 +4,7 @@
 
 ## Description
 
-This is an application like Awwards where users can signup, login and post a project to be reviewed and rated.
+This is an application that allows users in the estate to interact with other neighbours. Users can create posts details what is going on within the neighbourhood and also create posts that detail businesses located in the estate and also find the contacts for the local police authorities and health centres.
 
 ## Screenshot images
 
@@ -18,7 +18,7 @@ This is an application like Awwards where users can signup, login and post a pro
 
 ## Live page
 
-<https://github.com/edwinkipchumba/Awwards-app>
+https://github.com/edwinkipchumba/Jirani-watch
 
 ## User stories
 
@@ -36,15 +36,13 @@ Users would like to:
 
 | Behaviour | Input | Output |
 | :-----------------| :-----------------: | ------------------: |
-| Admin Authentication | On demand | Access Admin dashboard |
-| Admin Authentication | On demand,Verify emails before proceeding | Access Admin dashboard |
-| Display all projects | Home page | Clickable links to open live projects in different sites |
-| To add a project | Through Admin dashboard and homepage | Click on add and upload respectively |
-| To edit project | Through Admin dashboard | Redirected to the project form details and editing happens |
-| To delete the project | Through Admin dashboard | click on project object and confirm by delete button |
-| To search projects by title | Enter text in search bar | Users can search by project title |
-| Comment on projects | Add comments below respectively project | Users can add comments on any project |
-| Vote on projects | Vote | Users can review projects they like and comment |
+| Sign Up/Login | To create a new account,click on signup and login | Access home page on successful login |
+| Add a new post | Click on the new post on navbar | Access new created post |
+| Add a new business | Access created business | A new business added |
+| Create a new profile | By clicking the profile tab on the navbar | A new profile for the user is created |
+| To View all posts | Navigate to the home page | All posts will be displayed |
+| To search for a business by title | Enter text in search bar | All business that matched the search will be displayed |
+| Logout | Click on the account and select logout | You will be logged out |
 
 ## Setup | Installation Requirements
 
@@ -58,12 +56,12 @@ Users would like to:
 * Open Terminal {Ctrl+Alt+T}
 
 ```
-$git clone https://github.com/edwinkipchumba/Awwards-app
+$git clone https://github.com/edwinkipchumba/Jirani-watch
 
 ```
 
 ```
-$cd awwards-app
+$cd Jirani-watch
 ```
 
 * open based on the text editor you have.
@@ -111,8 +109,9 @@ $ python3 manage.py runserver
 * django3.2.8 and postgresql
 * HTML5
 * CSS3
-* Bootsrap3
+* Bootsrap4
 * python3.8
+* Heroku
 
 ## Known Bugs
 
@@ -127,62 +126,3 @@ If you find a bug, kindly feel free to comment an issue here and inlcude their c
 * E-Mail: edwinkolem5@gmail.com.
 
 ## License
-
-<https://github.com/edwinkipchumba/Awwards-app/blob/master/LICENSE>
-
-
-
-
-
-
-
-
-
-
-### Description
-This is an application that allows users in an area to interact with other people who also live in the same area. Users an create posts that details what is going on within the neighbourhood and also create posts that detail businesses located in that area. Users can also find the contacts for the local police authorities and health centres.
- 
-
-|        User Requirements                 |           Input                           |           Output                         |
-|------------------------------------------|-------------------------------------------|------------------------------------------|
-| Sign Up/Login                            | To create a new account, click on the sign| If login is successful, the user is      |
-|                                          | up link and fill in the form details. To  | redirected to the home page              |
-|                                          | login, fill in the details                |                                          |
-| Add a New Post                           | Click on the New Post tab on the navbar   | A new Post is created                    |
-|                                          | and fill out the form                     |                                          |
-| Add a New Business                       | Click on the New Business tab on the      | A new Business is added                  |
-|                                          | navbar and fill out the form              |                                          |
-| Create a New Profile                     | Click on the Profile tab on the navbar    | A new Profile for the user is created    |
-|                                          | then click on the Edit Profile button     |                                          |
-| To view All Posts                        | Navigate to the home page                 | All posts will be displayed              |
-| Search For a Business                    | Enter the business name into the search   | All businesses that match the searched   |
-|                                          | bar in the navbar                         | term will be displayed                   |
-| Log Out                                  | Click on the Account button and select    | You will be logged out                   |
-|                                          | log out                                   |                                          |
-
-
-### Setup/Installation Requirements
-- Ensure you have Python3.6 installed.
-- Clone the Neighbourhoods directory.
-- Create your own virtual environment and activate it using these respective commands `python3.6 -m venv --without-pip virtual` and  `source virtual/bin/activate`
-- Install all the necessary dependencies necessary for running the application using this command `pip install -r requirements.txt`
-- Open the terminal and run this command `psql` You can then create a database by running this command
-`CREATE DATABASE hood`
-- Run migrations using these respective commmands `python3.6 manage.py makemigrations projects` then `python3.6 manage.py migrate`
-- Run the app using this command `python3.6 manage.py runserver` on the terminal.You can then open the app on your browser.
-
-
-### Technologies Used
-<ul>
-<li>Python 3.6</li>
-<li>Django</li>
-<li>Heroku</li>
-<li>Bootstrap</li>
-<li>HTML</li>
-</ul>
-
-### Support and Contact Details
-For more information, questions, or feedback, get in touch with me on email: Emmanuel.Muchiri@outlook.com
-
-### Licence
-Copyright(c) 2019 Emmanuel Muchiri
