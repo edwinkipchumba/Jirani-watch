@@ -1,4 +1,4 @@
-# Awwards-App
+# Jirani-App
 
 ## Build by [Kolem Edwin]
 
@@ -24,12 +24,13 @@ This is an application like Awwards where users can signup, login and post a pro
 
 Users would like to:
 
-1. View posted projects and their details
-2. Post a project to be rated/reviewed
-3. Rate/review other users' projects
-4. Search for projects
-5. View projects overall score
-6. View my profile page
+1. Sign in with the application to start using.
+2. Set up a profile and general loaction of neighbourhood name.
+3. Find a list of different businesses in the neighborhood.
+4. Find contact information for Health department and Police authorities near neighbourhood.
+5. Create posts that will be visible to everyone in neighbourhood.
+6. Change neighbourhood when decide to move out.
+7. Only view details of a single neighbourhood.
 
 ## Behaviour Driven Development (BDD)
 
