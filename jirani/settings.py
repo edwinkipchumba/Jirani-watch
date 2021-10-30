@@ -31,17 +31,17 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Application definition
 
 INSTALLED_APPS = [
-    'neighbourhood',
-    'bootstrap4',
-    'tinymce',
-    'registration',
-    # 'rest_framework',
+   
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'neighbourhood',
+    'bootstrap4',
+    'tinymce',
+    'registration',
 ]
 
 MIDDLEWARE = [
@@ -144,3 +144,14 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# setting configuration parameters globally
+cloudinary.config( 
+  cloud_name = "moringa-dev", 
+  api_key = "634372948129142", 
+  api_secret = "De--YnRdHaaFQ1tlZx6DwYChcZg",
+  
+)
+
+# Activate Django-Heroku.
+django_heroku.settings(locals())
