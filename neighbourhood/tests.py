@@ -2,11 +2,10 @@ from django.test import TestCase
 from .models import neighbourhood,healthservices
 from django.contrib.auth.models import User
 import datetime as dt
-
 # Create your tests here.
 class neighbourhoodTestClass(TestCase):
     def setUp(self):
-        self.Kasarani = neighbourhood(neighbourhood='Alsops')
+        self.Kasarani = neighbourhood(neighbourhood='Kasarani')
 
     def test_instance(self):
         self.assertTrue(isinstance(self.Kasarani,neighbourhood))
@@ -20,6 +19,6 @@ class neighbourhoodTestClass(TestCase):
         self.assertTrue(len(hood)>0)
 
     def test_delete_method(self):
-        self.Kasarani.delete_neighbourhood('Alsops')
+        self.Kasarani.delete_neighbourhood('Kasarani')
         hood = neighbourhood.objects.all()
-	self.assertTrue(len(hood)==0)
+		self.assertTrue(len(hood)==0)

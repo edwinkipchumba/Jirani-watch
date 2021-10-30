@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load bootstrap4 %}
 {% load static %}
-{% load staticfiles %}
+{% load static %}
 
 {% block content %}
 <div class=" container row text-center">
@@ -35,8 +35,6 @@
                 <div class="modal-header text-center">
                     <h3 class="text-center">{{business.name}}</h3>
                 </div>
-
-                <!-- modal body -->
                 <div class="modal-body">
                     <img class="card-img-top" src="{{business.logo.url}}" height=200 width=100>
 
@@ -45,7 +43,6 @@
                 </div>
                 <div class="modal-footer" style="display:block;">
 
-                    <!-- contact section -->
                     <h4 class="text-center">Contacts</h4>
                     <p><span class="bold">Phone Number:</span> {{business.contact}}</p>
                     <p><span class="bold">Address:</span> {{business.address}}</p>

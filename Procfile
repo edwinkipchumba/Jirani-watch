@@ -1,0 +1,1 @@
+web: gunicorn jirani.wsgi --log-file -

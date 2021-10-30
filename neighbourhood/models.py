@@ -4,6 +4,7 @@ from tinymce.models import HTMLField
 
 # Create your models here.
 
+
 Priority=(
     ('Low Priority','Low Priority'),
     ('High Priority','High Priority'),
@@ -21,8 +22,9 @@ class neighbourhood(models.Model):
     @classmethod
     def delete_neighbourhood(cls,neighbourhood):
         cls.objects.filter(neighbourhood=neighbourhood).delete()
-        
-        # image upload profile
+
+
+
 class Profile(models.Model):
     profpic = models.ImageField(upload_to='profpics/')
     description = HTMLField()
@@ -34,7 +36,6 @@ class Profile(models.Model):
     def __str__(self):
         return self.name
 
-# class posts
 class BlogPost(models.Model):
     title = models.CharField(max_length=150)
     image = models.ImageField(upload_to='post/')
@@ -47,13 +48,11 @@ class BlogPost(models.Model):
     def __str__(self):
         return self.title
 
-# comments
 class Comment(models.Model):
     comment = models.CharField(max_length=300)
     username = models.ForeignKey(User,on_delete=models.CASCADE)
     post = models.ForeignKey(BlogPost,on_delete=models.CASCADE)
-    
-    
+
 class Business(models.Model):
     logo = models.ImageField(upload_to='logos/')
     description = HTMLField()
@@ -72,8 +71,7 @@ class Business(models.Model):
         businesses = cls.objects.filter(description__icontains=search_term)
         return businesses
     
-    
-# class healthservices
+
 class healthservices(models.Model):
     healthservices = models.CharField(max_length=100)
 
@@ -98,8 +96,8 @@ class Health(models.Model):
 
     def __str__(self):
         return self.name
-    
-    # police authorities
+
+
 class Authorities(models.Model):
     neighbourhood = models.ForeignKey(neighbourhood,on_delete=models.CASCADE)
     name =models.CharField(max_length=100)
@@ -110,7 +108,6 @@ class Authorities(models.Model):
     def __str__(self):
         return self.name
     
-    # notifications
 
 class notifications(models.Model):
     title = models.CharField(max_length=100)
@@ -122,5 +119,5 @@ class notifications(models.Model):
 
     def __str__(self):
         return self.title
-   
-        
+
+

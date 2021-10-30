@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load staticfiles %}
+{% load static %}
 
 
 {% block content %}
@@ -35,8 +35,6 @@
                     <div class="modal-header text-center">
                         <h3 class="text-center">{{health.name}}</h3>
                     </div>
-
-                    <!-- modal body -->
                     <div class="modal-body">
                         <img class="card-img-top" src="{{health.logo.url}}" height=200 width=100>
 
@@ -59,5 +57,20 @@
     </div>
 
 </div>
+
+<!-- <style>
+    .bold {
+        font-weight: bold;
+    }
+
+    h3 {
+        text-align: center;
+    }
+
+    h1 {
+        color: white;
+        text-align: center;
+    }
+</style> -->
 
 {% endblock %}

@@ -1,10 +1,9 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
 from .forms import *
 from .emails import *
-
 # Create your views here.
 
 def index(request):
@@ -17,21 +16,19 @@ def index(request):
         return redirect('create-profile')
     return render(request,'index.html')
 
-    # user profile request
+
 @login_required(login_url='/accounts/login/')
 def my_profile(request):
     current_user=request.user
     profile =Profile.objects.get(username=current_user)
     return render(request,'profile/user_profile.html',{"profile":profile})
 
-    # profile username
+
 @login_required(login_url='/accounts/login/')
 def user_profile(request,username):
     user = User.objects.get(username=username)
     profile =Profile.objects.get(username=user)
-    
-    
-    # creating profile 
+
 @login_required(login_url='/accounts/login/')
 def create_profile(request):
     current_user=request.user
@@ -46,7 +43,7 @@ def create_profile(request):
         form = ProfileForm()
         return render(request,'profile/profile_form.html',{"form":form})
     
-    # updating profile
+
 @login_required(login_url='/accounts/login/')
 def update_profile(request):
     current_user=request.user
@@ -69,7 +66,6 @@ def update_profile(request):
     return render(request,'profile/update_profile.html',{"form":form})
 
 
-    # options for posts
 @login_required(login_url='/accounts/login/')
 def blog(request):
     current_user=request.user
@@ -77,7 +73,6 @@ def blog(request):
     blogposts = BlogPost.objects.filter(neighbourhood=profile.neighbourhood)
 
     return render(request,'blog/blogs.html',{"blogposts":blogposts})
-
 
 @login_required(login_url='/accounts/login/')
 def view_blog(request,id):
@@ -101,7 +96,7 @@ def view_blog(request,id):
 
     return render(request,'blog/view_blog.html',{"blog":blog,"form":form,"comments":comments})
 
-# post new post
+
 @login_required(login_url='/accounts/login/')
 def new_blogpost(request):
     current_user=request.user
@@ -132,7 +127,6 @@ def businesses(request):
 
     return render(request,'business/businesses.html',{"businesses":businesses})
 
-# post new b/s
 @login_required(login_url='/accounts/login/')
 def new_business(request):
     current_user=request.user
@@ -153,8 +147,6 @@ def new_business(request):
 
     return render(request,'business/business_form.html',{"form":form})
 
-
-# jirani health information
 @login_required(login_url='/accounts/login/')
 def health(request):
     current_user=request.user
@@ -163,8 +155,6 @@ def health(request):
 
     return render(request,'health/health.html',{"healthservices":healthservices})
 
-
-# information about police authorities
 @login_required(login_url='/accounts/login/')
 def authorities(request):
     current_user=request.user
@@ -174,7 +164,6 @@ def authorities(request):
     return render(request,'authorities/authorities.html',{"authorities":authorities})
 
 
-# jirani notifications
 @login_required(login_url='/accounts/login/')
 def notification(request):
     current_user=request.user
@@ -207,7 +196,6 @@ def new_notification(request):
 
     return render(request,'notifications/notifications_form.html',{"form":form})
 
-# search 
 @login_required(login_url='/accounts/login/')
 def search_results(request):
     current_user = request.user
@@ -224,4 +212,3 @@ def search_results(request):
     else:
         message="You haven't searched for any term"
         return render(request,'business/search.html',{"message":message})
-
