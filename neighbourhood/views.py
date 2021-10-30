@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import ObjectDoesNotExist
+from PIL import Image
 from .forms import *
 from .emails import *
 # Create your views here.
@@ -109,7 +110,7 @@ def new_blogpost(request):
             blogpost.username = current_user
             blogpost.neighbourhood = profile.neighbourhood
             blogpost.profpic = profile.profpic
-            blogpost.save()
+           
 
         return HttpResponseRedirect('/blog')
 
@@ -186,7 +187,8 @@ def new_notification(request):
             notification.save()
 
             if notification.priority == 'High Priority':
-                send_email(profile.name,profile.email,notification.title,notification.notification,notification.author,notification.neighbourhood)
+                # send_email(profile.name,profile.email,notification.title,notification.notification,notification.author,notification.neighbourhood)
+                send_email(notification.title,notification.notification)
 
         return HttpResponseRedirect('/notifications')
 
