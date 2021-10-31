@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     'bootstrap4',
     'tinymce',
     'registration',
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -161,6 +163,22 @@ cloudinary.config(
   api_secret = "De--YnRdHaaFQ1tlZx6DwYChcZg",
   
 )
+
+# mail configuration
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'edwin.kolem@student.moringaschool.com'
+
+
+# rest_framework authtoken
+REST_FREMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES':(
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}
+
+
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
