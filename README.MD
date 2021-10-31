@@ -8,9 +8,9 @@ This is an application that allows users in the estate to interact with other ne
 
 ## Screenshot images
 
-<img src="static../../static/img/akan%20naming.png">
+<img src="static../../static/images/home.png">
 
-<img src="static../../static/img/home2.png">
+<img src="static../../static/images/phonesize.png">
 
 <img src="static../../static/img/home3.png">
 
