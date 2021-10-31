@@ -99,16 +99,6 @@ class Health(models.Model):
     def __str__(self):
         return self.name
 
-
-class Authorities(models.Model):
-    neighbourhood = models.ForeignKey(neighbourhood,on_delete=models.CASCADE)
-    name =models.CharField(max_length=100)
-    email = models.EmailField()
-    contact = models.IntegerField()
-    address =models.CharField(max_length=100)
-
-    def __str__(self):
-        return self.name
     
 
 class notifications(models.Model):

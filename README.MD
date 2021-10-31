@@ -4,7 +4,7 @@
 
 ## Description
 
-This is an application that allows users in the estate to interact with other neighbours. Users can create posts details what is going on within the neighbourhood and also create posts that detail businesses located in the estate and also find the contacts for the local police authorities and health centres.
+This is an application that allows users in the estate to interact with other neighbours. Users can create posts details what is going on within the neighbourhood and also create posts that detail businesses located in the estate and also find the contacts for the health centres.
 
 ## Screenshot images
 

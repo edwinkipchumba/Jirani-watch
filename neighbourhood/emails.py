@@ -6,7 +6,7 @@ from django.template.loader import render_to_string
 def send_email(name,receiver):
     # Creating message subject and sender
     subject = 'Welcome to Our Neighbourhood'
-    sender = 'emmahg6@gmail.com'
+    sender = 'edwin.kolem@studentm.moringaschool.com'
 
     #passing in the context vairables
     text_content = render_to_string('email/notification.txt',{"name": name})

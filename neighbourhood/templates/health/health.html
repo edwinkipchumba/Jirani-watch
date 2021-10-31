@@ -35,6 +35,8 @@
                     <div class="modal-header text-center">
                         <h3 class="text-center">{{health.name}}</h3>
                     </div>
+
+                    <!-- body -->
                     <div class="modal-body">
                         <img class="card-img-top" src="{{health.logo.url}}" height=200 width=100>
 
@@ -43,6 +45,8 @@
                         <p><span class="bold">Address:</span> {{health.address}}</p>
                         <p><span class="bold">Email:</span> {{health.email}}</p>
                     </div>
+
+                    <!-- modal footer -->
                     <div class="modal-footer" style="display:block;">
                         {% for healthservice in health.healthservices.all %}
                         <button class="btn btn-primary">{{ healthservice }}</button>

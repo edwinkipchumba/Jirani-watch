@@ -8,5 +8,4 @@ admin.site.register(BlogPost);
 admin.site.register(Business);
 admin.site.register(Health);
 admin.site.register(healthservices);
-admin.site.register(Authorities);
 admin.site.register(notifications);
