@@ -12,9 +12,8 @@ This is an application that allows users in the estate to interact with other ne
 
 <img src="static../../static/images/phonesize.png">
 
-<img src="static../../static/img/home3.png">
+<img src="static../../static/images/prof.png">
 
-<img src="static../../static/img/prof.png">
 
 ## Live page
 
