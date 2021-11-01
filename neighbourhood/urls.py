@@ -14,10 +14,12 @@ urlpatterns=[
     url(r'^view/blog/(\d+)',views.view_blog,name='view_blog'),
     url(r'^business',views.businesses, name='business'),
     url(r'^new/business$',views.new_business, name='new-business'),
-    url(r'^health',views.health, name='health'),
+    url(r'^health$',views.health, name='health'),
+    url(r'^healthservice/',views.health_service, name='healthservice'),
     url(r'^notifications',views.notification, name='notifications'),
     url(r'^new/notification$',views.new_notification, name='new-notification'),
     url(r'^search/',views.search_results, name='search_results'), 
+  
 ] 
 
 if settings.DEBUG:

@@ -26,3 +26,8 @@ class notificationsForm(forms.ModelForm):
     class Meta:
         model=notifications
         exclude=['author','neighbourhood','post_date']
+        
+class HealthForm(forms.ModelForm):
+    class Meta:
+        model=Health
+        exclude=['logo']
